@@ -1,0 +1,20 @@
+{
+  "name": "clasp",
+  "version": "1.0.0",
+  "description": "This project is google app script project",
+  "main": "Kode.js",
+  "dependencies": {
+    "@types/google-apps-script": "^1.0.33"
+  },
+  "devDependencies": {
+    "@google/clasp": "^2.3.2"
+  },
+  "scripts": {
+    "start": "clasp push",
+    "build": "clasp deploy --deploymentId AKfycbyjwZlj2KFKRyC5YVr6kaHuhqhJ5X-CjXAO4KlN1R-GP9XVGZxUx9ezuCPPk6gMn6Pf",
+    "deploy": "clasp deployments"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
