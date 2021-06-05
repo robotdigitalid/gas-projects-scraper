@@ -9,18 +9,22 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 12.x ]
+
     steps:
       - uses: namaggarwal/clasp-token-action@v0.0.1
         with:
           client-id: ${{ secrets.CLIENT_ID }}
           client-secret: ${{ secrets.CLIENT_SECRET }}
           refresh-token: ${{ secrets.REFRESH_TOKEN }}
-      - name: install dependencies
-        run: |
-          npm install
-      - name: push to gas
-        run: |
-          npm run push
-      - name: deploy new version
-        run: |
-          npm run build
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm run push
+      - run: npm run build

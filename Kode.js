@@ -79,5 +79,5 @@ const start = () => {
   Function for test the service running manual
  */
 const test = () => {
-  // just test comment
+  Logger.log('Running test');
 }

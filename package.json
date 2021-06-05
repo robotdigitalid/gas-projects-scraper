@@ -11,8 +11,7 @@
   },
   "scripts": {
     "push": "clasp push -f",
-    "build": "clasp deploy --deploymentId AKfycbyjwZlj2KFKRyC5YVr6kaHuhqhJ5X-CjXAO4KlN1R-GP9XVGZxUx9ezuCPPk6gMn6Pf",
-    "deploy": "clasp deployments"
+    "build": "clasp deploy --deploymentId AKfycbyjwZlj2KFKRyC5YVr6kaHuhqhJ5X-CjXAO4KlN1R-GP9XVGZxUx9ezuCPPk6gMn6Pf"
   },
   "keywords": [],
   "author": "",
