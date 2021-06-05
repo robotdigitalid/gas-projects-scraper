@@ -15,9 +15,12 @@ jobs:
           client-id: ${{ secrets.CLIENT_ID }}
           client-secret: ${{ secrets.CLIENT_SECRET }}
           refresh-token: ${{ secrets.REFRESH_TOKEN }}
+      - name: install dependencies
+        run: |
+          npm install
       - name: push to gas
         run: |
-          clasp push -f
+          npm run push
       - name: deploy new version
         run: |
           npm run build
