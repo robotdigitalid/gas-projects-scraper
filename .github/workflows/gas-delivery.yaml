@@ -1,0 +1,23 @@
+name: Google App Script Integration
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: namaggarwal/clasp-token-action@v0.0.1
+        with:
+          client-id: ${{ secrets.CLIENT_ID }}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
+          refresh-token: ${{ secrets.REFRESH_TOKEN }}
+      - name: push to gas
+        run: |
+          clasp push -f
+      - name: deploy new version
+        run: |
+          npm run build
